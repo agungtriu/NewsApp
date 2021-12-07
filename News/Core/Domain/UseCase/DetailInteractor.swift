@@ -5,7 +5,6 @@
 //  Created by Agung Tri Utomo on 02/12/21.
 //
 
-import Foundation
 import Combine
 
 protocol DetailUseCase {

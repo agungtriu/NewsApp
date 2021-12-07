@@ -5,8 +5,6 @@
 //  Created by Agung Tri Utomo on 02/12/21.
 //
 
-import Foundation
-
 struct ArticlesResponse: Decodable {
     let status: String
     let totalResults: Int

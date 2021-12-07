@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import RxSwift
 protocol NewsRepositoryProtocol {
     func getArticles() -> AnyPublisher<[ArticleModel], Error>
     func getBookmarkedArticles() -> AnyPublisher<[ArticleModel], Error>

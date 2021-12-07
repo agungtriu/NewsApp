@@ -5,7 +5,6 @@
 //  Created by Agung Tri Utomo on 04/12/21.
 //
 
-import Foundation
 import Combine
 
 protocol BookmarkUseCase {

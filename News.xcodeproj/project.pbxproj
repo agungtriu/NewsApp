@@ -48,6 +48,7 @@
 		AC6C5154275936FC0069DC0B /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C5153275936FC0069DC0B /* DetailInteractor.swift */; };
 		AC6C5156275937C50069DC0B /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C5155275937C50069DC0B /* DetailPresenter.swift */; };
 		AC6C515827593C990069DC0B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C515727593C990069DC0B /* ActivityIndicator.swift */; };
+		ACED80AF275F43C4005A824E /* News-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACED80AE275F43C4005A824E /* News-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		AC6C5153275936FC0069DC0B /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		AC6C5155275937C50069DC0B /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		AC6C515727593C990069DC0B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		ACED80AE275F43C4005A824E /* News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "News-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				AC6C511A275919F20069DC0B /* Info.plist */,
+				ACED80AE275F43C4005A824E /* News-Info.plist */,
 				AC6C50F7275916090069DC0B /* App */,
 				AC6C50F9275916340069DC0B /* Core */,
 				AC6C50FA275916630069DC0B /* Module */,
@@ -448,6 +451,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACED80AF275F43C4005A824E /* News-Info.plist in Resources */,
 				AC6C5118275918320069DC0B /* Mulish-Regular.ttf in Resources */,
 				AC6C50F1275916020069DC0B /* Preview Assets.xcassets in Resources */,
 				AC6C50EE275916020069DC0B /* Assets.xcassets in Resources */,
