@@ -36,6 +36,7 @@ identifier_name:
     error: 4
   excluded:
     - id
+    - app
     - URL
     - url
     - hex
