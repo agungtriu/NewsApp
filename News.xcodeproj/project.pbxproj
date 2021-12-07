@@ -48,8 +48,19 @@
 		AC6C5154275936FC0069DC0B /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C5153275936FC0069DC0B /* DetailInteractor.swift */; };
 		AC6C5156275937C50069DC0B /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C5155275937C50069DC0B /* DetailPresenter.swift */; };
 		AC6C515827593C990069DC0B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C515727593C990069DC0B /* ActivityIndicator.swift */; };
+		AC6FBC52275F647A00F9C538 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FBC51275F647A00F9C538 /* NewsTests.swift */; };
 		ACED80AF275F43C4005A824E /* News-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACED80AE275F43C4005A824E /* News-Info.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC6FBC53275F647A00F9C538 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC6C50DE275915FD0069DC0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC6C50E5275915FD0069DC0B;
+			remoteInfo = News;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AC2AD8F6275BA61C008F057B /* BookmarkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkPresenter.swift; sourceTree = "<group>"; };
@@ -92,6 +103,8 @@
 		AC6C5153275936FC0069DC0B /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		AC6C5155275937C50069DC0B /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		AC6C515727593C990069DC0B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		AC6FBC4F275F647A00F9C538 /* NewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC6FBC51275F647A00F9C538 /* NewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
 		ACED80AE275F43C4005A824E /* News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "News-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +120,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC6FBC4C275F647A00F9C538 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -115,6 +135,7 @@
 			children = (
 				AC2AD903275BEFF6008F057B /* .swiftlint.yml */,
 				AC6C50E8275915FD0069DC0B /* News */,
+				AC6FBC50275F647A00F9C538 /* NewsTests */,
 				AC6C50E7275915FD0069DC0B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				AC6C50E6275915FD0069DC0B /* News.app */,
+				AC6FBC4F275F647A00F9C538 /* NewsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -381,6 +403,14 @@
 			path = Mulish;
 			sourceTree = "<group>";
 		};
+		AC6FBC50275F647A00F9C538 /* NewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FBC51275F647A00F9C538 /* NewsTests.swift */,
+			);
+			path = NewsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -408,6 +438,24 @@
 			productReference = AC6C50E6275915FD0069DC0B /* News.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AC6FBC4E275F647A00F9C538 /* NewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC6FBC57275F647A00F9C538 /* Build configuration list for PBXNativeTarget "NewsTests" */;
+			buildPhases = (
+				AC6FBC4B275F647A00F9C538 /* Sources */,
+				AC6FBC4C275F647A00F9C538 /* Frameworks */,
+				AC6FBC4D275F647A00F9C538 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC6FBC54275F647A00F9C538 /* PBXTargetDependency */,
+			);
+			name = NewsTests;
+			productName = NewsTests;
+			productReference = AC6FBC4F275F647A00F9C538 /* NewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -420,6 +468,10 @@
 				TargetAttributes = {
 					AC6C50E5275915FD0069DC0B = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					AC6FBC4E275F647A00F9C538 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = AC6C50E5275915FD0069DC0B;
 					};
 				};
 			};
@@ -442,6 +494,7 @@
 			projectRoot = "";
 			targets = (
 				AC6C50E5275915FD0069DC0B /* News */,
+				AC6FBC4E275F647A00F9C538 /* NewsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -456,6 +509,13 @@
 				AC6C50F1275916020069DC0B /* Preview Assets.xcassets in Resources */,
 				AC6C50EE275916020069DC0B /* Assets.xcassets in Resources */,
 				AC6C5119275918320069DC0B /* Mulish-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC6FBC4D275F647A00F9C538 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +582,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC6FBC4B275F647A00F9C538 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC6FBC52275F647A00F9C538 /* NewsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC6FBC54275F647A00F9C538 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC6C50E5275915FD0069DC0B /* News */;
+			targetProxy = AC6FBC53275F647A00F9C538 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AC6C50F2275916020069DC0B /* Debug */ = {
@@ -701,6 +777,52 @@
 			};
 			name = Release;
 		};
+		AC6FBC55275F647A00F9C538 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ML7WPTCV2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dicoding.academy.NewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/News.app/News";
+			};
+			name = Debug;
+		};
+		AC6FBC56275F647A00F9C538 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ML7WPTCV2T;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dicoding.academy.NewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/News.app/News";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -718,6 +840,15 @@
 			buildConfigurations = (
 				AC6C50F5275916020069DC0B /* Debug */,
 				AC6C50F6275916020069DC0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC6FBC57275F647A00F9C538 /* Build configuration list for PBXNativeTarget "NewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC6FBC55275F647A00F9C538 /* Debug */,
+				AC6FBC56275F647A00F9C538 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
