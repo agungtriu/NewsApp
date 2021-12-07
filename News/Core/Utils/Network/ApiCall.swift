@@ -5,8 +5,6 @@
 //  Created by Agung Tri Utomo on 02/12/21.
 //
 
-import Foundation
-
 struct API {
     static let baseUrl = "https://newsapi.org/v2/"
     static let apiKey = "a84af0c6d1d7451591edffc5b8c66e37"
