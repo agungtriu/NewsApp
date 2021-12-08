@@ -7,9 +7,11 @@
 
 import SwiftUI
 import URLImage
+import Core
+import Article
 
 struct RowView: View {
-    var article: ArticleModel
+    var article: ArticleDomainModel
     var body: some View {
         ZStack {
             Color(hex: 0x202020).ignoresSafeArea().cornerRadius(10)

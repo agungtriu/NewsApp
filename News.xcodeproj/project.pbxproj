@@ -15,6 +15,7 @@
 		AC2AD8FD275BD559008F057B /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2AD8FC275BD559008F057B /* NoDataView.swift */; };
 		AC2AD8FF275BDFE0008F057B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2AD8FE275BDFDF008F057B /* Date+Ext.swift */; };
 		AC2AD901275BE09C008F057B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2AD900275BE09C008F057B /* Utils.swift */; };
+		AC3E5943275FF563009358A1 /* Article in Frameworks */ = {isa = PBXBuildFile; productRef = AC3E5942275FF563009358A1 /* Article */; };
 		AC5DD5E7275A6C700041BE4F /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5DD5E6275A6C700041BE4F /* WebView.swift */; };
 		AC6C50EA275915FD0069DC0B /* NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C50E9275915FD0069DC0B /* NewsApp.swift */; };
 		AC6C50EC275915FD0069DC0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C50EB275915FD0069DC0B /* ContentView.swift */; };
@@ -51,6 +52,7 @@
 		AC6C5156275937C50069DC0B /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C5155275937C50069DC0B /* DetailPresenter.swift */; };
 		AC6C515827593C990069DC0B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6C515727593C990069DC0B /* ActivityIndicator.swift */; };
 		AC6FBC52275F647A00F9C538 /* NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC6FBC51275F647A00F9C538 /* NewsTests.swift */; };
+		AC9E7C1E2760956D0020225A /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = AC9E7C1D2760956D0020225A /* Core */; };
 		ACED80AF275F43C4005A824E /* News-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACED80AE275F43C4005A824E /* News-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +84,7 @@
 		AC2AD8FE275BDFDF008F057B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		AC2AD900275BE09C008F057B /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		AC2AD903275BEFF6008F057B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AC3E593E275FDCAC009358A1 /* Article */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Article; path = ../Module/Article; sourceTree = "<group>"; };
 		AC5DD5E6275A6C700041BE4F /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		AC6C50E6275915FD0069DC0B /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6C50E9275915FD0069DC0B /* NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApp.swift; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 		AC6C515727593C990069DC0B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		AC6FBC4F275F647A00F9C538 /* NewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC6FBC51275F647A00F9C538 /* NewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
+		AC9E7C1C276094590020225A /* Core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Core; path = ../Module/Core; sourceTree = "<group>"; };
 		ACED80AE275F43C4005A824E /* News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "News-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +139,9 @@
 				AC6C512F27591E640069DC0B /* RealmSwift in Frameworks */,
 				AC6C512D27591E640069DC0B /* Realm in Frameworks */,
 				AC6C512727591CE50069DC0B /* URLImage in Frameworks */,
+				AC3E5943275FF563009358A1 /* Article in Frameworks */,
 				AC6C512A27591D1F0069DC0B /* Alamofire in Frameworks */,
+				AC9E7C1E2760956D0020225A /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,14 +164,24 @@
 			path = NewsUITests;
 			sourceTree = "<group>";
 		};
+		AC3E593F275FF55E009358A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AC6C50DD275915FD0069DC0B = {
 			isa = PBXGroup;
 			children = (
+				AC9E7C1C276094590020225A /* Core */,
+				AC3E593E275FDCAC009358A1 /* Article */,
 				AC2AD903275BEFF6008F057B /* .swiftlint.yml */,
 				AC6C50E8275915FD0069DC0B /* News */,
 				AC6FBC50275F647A00F9C538 /* NewsTests */,
 				AC24ED3F275F96ED00559795 /* NewsUITests */,
 				AC6C50E7275915FD0069DC0B /* Products */,
+				AC3E593F275FF55E009358A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -481,6 +497,8 @@
 				AC6C512927591D1F0069DC0B /* Alamofire */,
 				AC6C512C27591E640069DC0B /* Realm */,
 				AC6C512E27591E640069DC0B /* RealmSwift */,
+				AC3E5942275FF563009358A1 /* Article */,
+				AC9E7C1D2760956D0020225A /* Core */,
 			);
 			productName = News;
 			productReference = AC6C50E6275915FD0069DC0B /* News.app */;
@@ -540,6 +558,7 @@
 				AC6C512527591CE50069DC0B /* XCRemoteSwiftPackageReference "url-image" */,
 				AC6C512827591D1F0069DC0B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AC6C512B27591E640069DC0B /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				AC3E594827600167009358A1 /* XCRemoteSwiftPackageReference "Core" */,
 			);
 			productRefGroup = AC6C50E7275915FD0069DC0B /* Products */;
 			projectDirPath = "";
@@ -983,6 +1002,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AC3E594827600167009358A1 /* XCRemoteSwiftPackageReference "Core" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/agungtriu/Core";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		AC6C512527591CE50069DC0B /* XCRemoteSwiftPackageReference "url-image" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
@@ -1010,6 +1037,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AC3E5942275FF563009358A1 /* Article */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Article;
+		};
 		AC6C512627591CE50069DC0B /* URLImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AC6C512527591CE50069DC0B /* XCRemoteSwiftPackageReference "url-image" */;
@@ -1029,6 +1060,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AC6C512B27591E640069DC0B /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		AC9E7C1D2760956D0020225A /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC3E594827600167009358A1 /* XCRemoteSwiftPackageReference "Core" */;
+			productName = Core;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

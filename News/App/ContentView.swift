@@ -6,10 +6,30 @@
 //
 
 import SwiftUI
+import Core
+import Article
 
 struct ContentView: View {
-    @EnvironmentObject var newsPresenter: NewsPresenter
-    @EnvironmentObject var bookmarkPresenter: BookmarkPresenter
+    @EnvironmentObject var newsPresenter: GetListPresenter<Any,
+            ArticleDomainModel,
+            Interactor<Any,
+                        [ArticleDomainModel],
+                        GetArticlesRepository<
+                            GetArticlesRemoteDataSource,
+                            ArticlesTransformer
+                        >
+            >
+    >
+    @EnvironmentObject var bookmarkPresenter: GetListPresenter<Any,
+           ArticleDomainModel,
+           Interactor<Any,
+                       [ArticleDomainModel],
+                       GetBookmarkArticlesRepository<
+                           GetArticlesLocaleDataSource,
+                           ArticlesTransformer
+                       >
+           >
+   >
     @State var selectedIndex = 0
     let tabBarImageNamesSelected = ["icon_newspaper_on", "icon_bookmark_solid", "icon_user_solid"]
     let tabBarImageNames = ["icon_newspaper_off", "icon_bookmark", "icon_user"]
@@ -58,13 +78,5 @@ struct ContentView: View {
             .navigationBarTitle("News")
             .navigationBarTitleDisplayMode(.inline)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let newsListUseCase = Injection.init().provideNews()
-        let newsPresenter = NewsPresenter(newsUseCase: newsListUseCase)
-        ContentView().environmentObject(newsPresenter)
     }
 }

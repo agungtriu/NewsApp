@@ -6,42 +6,53 @@
 //
 
 import SwiftUI
+import Core
+import Article
 
 struct NewsListView: View {
-    @ObservedObject var presenter: NewsPresenter
+    @ObservedObject var presenter: GetListPresenter<Any,
+            ArticleDomainModel,
+            Interactor<Any,
+                        [ArticleDomainModel],
+                        GetArticlesRepository<
+                            GetArticlesRemoteDataSource,
+                            ArticlesTransformer
+                        >
+            >
+    >
     var body: some View {
         ZStack {
-            if presenter.loadingState {
+            if presenter.isLoading {
                 VStack {
                     Spacer()
                     ActivityIndicator()
                     Spacer()
                 }
             } else {
-                if self.presenter.articles.isEmpty {
+                if self.presenter.result.isEmpty {
                     NoDataView()
                 } else {
                     ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(self.presenter.articles, id: \.id) { article in
+                        ForEach(self.presenter.result, id: \.id) { article in
                             ZStack {
-                                self.presenter.linkBuilder(for: article) {
+                                linkBuilder(for: article) {
                                     RowView(article: article)
-                                }.buttonStyle(PlainButtonStyle())
-                            }.padding(8)
+                                }
+                            }.buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }
         }.onAppear {
-            self.presenter.getArticles()
+            self.presenter.getList(request: nil)
         }
     }
-}
-
-struct NewsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        let newsListUseCase = Injection.init().provideNews()
-        let newsPresenter = NewsPresenter(newsUseCase: newsListUseCase)
-        NewsListView(presenter: newsPresenter)
+    func linkBuilder<Content: View>(
+        for article: ArticleDomainModel,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationLink(
+            destination: NewsRouter.makeDetailView(for: article)
+        ) { content() }
     }
 }

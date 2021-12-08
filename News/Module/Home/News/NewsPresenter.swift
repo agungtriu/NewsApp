@@ -35,11 +35,11 @@ class NewsPresenter: ObservableObject {
             })
             .store(in: &cancellables)
     }
-    func linkBuilder<Content: View>(
-        for article: ArticleModel,
-        @ViewBuilder content: () -> Content
-    ) -> some View {
-        NavigationLink(
-            destination: router.makeDetailView(for: article)) { content() }
-    }
+//    func linkBuilder<Content: View>(
+//        for article: ArticleModel,
+//        @ViewBuilder content: () -> Content
+//    ) -> some View {
+//        NavigationLink(
+//            destination: router.makeDetailView(for: article)) { content() }
+//    }
 }

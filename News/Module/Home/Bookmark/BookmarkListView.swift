@@ -6,42 +6,53 @@
 //
 
 import SwiftUI
+import Core
+import Article
 
 struct BookmarkListView: View {
-    @ObservedObject var presenter: BookmarkPresenter
+    @ObservedObject var presenter: GetListPresenter<Any,
+                                                    ArticleDomainModel,
+                                                    Interactor<Any,
+                                                               [ArticleDomainModel],
+                                                               GetBookmarkArticlesRepository<
+                                                                GetArticlesLocaleDataSource,
+                                                                ArticlesTransformer
+                                                               >
+                                                    >
+    >
     var body: some View {
         ZStack {
-            if presenter.loadingState {
+            if presenter.isLoading {
                 VStack {
                     Spacer()
                     ActivityIndicator()
                     Spacer()
                 }
             } else {
-                if presenter.articles.isEmpty {
+                if presenter.result.isEmpty {
                     NoDataView()
                 } else {
                     ScrollView(.vertical, showsIndicators: false) {
-                        ForEach(self.presenter.articles, id: \.id) { article in
+                        ForEach(self.presenter.result, id: \.id) { article in
                             ZStack {
-                                self.presenter.linkBuilder(for: article) {
+                                linkBuilder(for: article) {
                                     RowView(article: article)
-                                }.buttonStyle(PlainButtonStyle())
-                            }.padding(8)
+                                }
+                            }.buttonStyle(PlainButtonStyle())
                         }
                     }
                 }
             }
         }.onAppear {
-            self.presenter.getBookmarks()
+            self.presenter.getList(request: nil)
         }
     }
-}
-
-struct BookmarkListView_Previews: PreviewProvider {
-    static var previews: some View {
-        let bookmarkListUseCase = Injection.init().provideBookmark()
-        let bookmarkPresenter = BookmarkPresenter(bookmarkUseCase: bookmarkListUseCase)
-        BookmarkListView(presenter: bookmarkPresenter)
+    func linkBuilder<Content: View>(
+        for article: ArticleDomainModel,
+        @ViewBuilder content: () -> Content
+    ) -> some View {
+        NavigationLink(
+            destination: BookmarkRouter.makeDetailView(for: article)
+        ) { content() }
     }
 }

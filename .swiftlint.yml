@@ -1,6 +1,8 @@
 disabled_rules:
   - nesting
   - implicit_getter
+  - force_cast
+  - force_try
 opt_in_rules: # Find all the available rules by running: `swiftlint rules`
   - empty_count
 excluded: # paths to ignore during linting. Takes precedence over `included`.
@@ -11,10 +13,7 @@ excluded: # paths to ignore during linting. Takes precedence over `included`.
   - Source/*/ExcludedFile.swift
 analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
   - explicit_self
-force_cast: warning
-force_try:
-  severity: warning
-line_length: 150
+line_length: 200
 type_body_length:
   - 300 # warning
   - 400 # error

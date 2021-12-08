@@ -6,16 +6,40 @@
 //
 
 import SwiftUI
+import Article
+import Core
 
 struct DetailView: View {
     @State var isBookmarked = false
-    @ObservedObject var presenter: DetailPresenter
-    var article: ArticleModel
-    init(presenter: DetailPresenter, article: ArticleModel) {
-        self.presenter = presenter
+    @ObservedObject var getPresenter: GetPresenter<String,
+                                                   Bool,
+                                                   Interactor<String,
+                                                              Bool,
+                                                              GetBookmarkArticleRepository<GetArticlesLocaleDataSource>>>
+    @ObservedObject var addPresenter: GetPresenter<ArticleDomainModel,
+                                                   Bool,
+                                                   Interactor<ArticleDomainModel,
+                                                              Bool,
+                                                              AddBookmarkArticleRepository<GetArticlesLocaleDataSource,
+                                                                                           ArticleTransformer>>>
+    @ObservedObject var deletePresenter: GetPresenter<String,
+                                                      Bool,
+                                                      Interactor<String,
+                                                                 Bool,
+                                                                 DeleteBookmarkArticleRepository<GetArticlesLocaleDataSource>>>
+    var article: ArticleDomainModel
+    init(
+        getPresenter: GetPresenter<String, Bool, Interactor<String, Bool, GetBookmarkArticleRepository<GetArticlesLocaleDataSource>>>,
+        addPresenter: GetPresenter<ArticleDomainModel, Bool, Interactor<ArticleDomainModel, Bool, AddBookmarkArticleRepository<GetArticlesLocaleDataSource, ArticleTransformer>>>,
+        deletePresenter: GetPresenter<String, Bool, Interactor<String, Bool, DeleteBookmarkArticleRepository<GetArticlesLocaleDataSource>>>,
+        article: ArticleDomainModel
+    ) {
+        self.getPresenter = getPresenter
+        self.addPresenter = addPresenter
+        self.deletePresenter = deletePresenter
         self.article = article
-        self.presenter.getBookmarkedArticle(articleId: self.article.id)
-        isBookmarked = self.presenter.resultBookmarked
+        self.getPresenter.get(request: self.article.id)
+        isBookmarked = self.getPresenter.result ?? false
     }
     var body: some View {
         WebView(request: URLRequest(url: URL(string: article.url)!))
@@ -26,22 +50,23 @@ struct DetailView: View {
                 trailing:
                     isBookmarked ?
                 Button(action: {
-                    presenter.deleteBookmarkArticle(articleId: article.id)
-                    isBookmarked = presenter.resultDelete
+                    deletePresenter.get(request: article.id)
+                    isBookmarked = deletePresenter.result ?? false
                 }, label: {
                     Image("icon_bookmark_solid").imageScale(.large)
                 })
                 :
                     Button(action: {
-                        presenter.addBookmarkArticle(article: article)
-                        isBookmarked = !presenter.resultAdd
+                        addPresenter.get(request: article)
+                        isBookmarked = addPresenter.result ?? false
+                        isBookmarked = !isBookmarked
                     }, label: {
                         Image("icon_bookmark").imageScale(.large)
                     })
             )
             .onAppear {
-                presenter.getBookmarkedArticle(articleId: article.id)
-                isBookmarked = presenter.resultBookmarked
+                self.getPresenter.get(request: self.article.id)
+                isBookmarked = self.getPresenter.result ?? false
             }
     }
 }
