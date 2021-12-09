@@ -121,7 +121,6 @@
 		AC6FBC51275F647A00F9C538 /* NewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTests.swift; sourceTree = "<group>"; };
 		ACED80AE275F43C4005A824E /* News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "News-Info.plist"; sourceTree = "<group>"; };
 		ACF536FD2761D0EA00522AE8 /* Article */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Article; path = ../Module/Article; sourceTree = "<group>"; };
-		ACF537002761D2C500522AE8 /* Core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Core; path = ../Module/Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +173,6 @@
 		AC6C50DD275915FD0069DC0B = {
 			isa = PBXGroup;
 			children = (
-				ACF537002761D2C500522AE8 /* Core */,
 				ACF536FD2761D0EA00522AE8 /* Article */,
 				AC2AD903275BEFF6008F057B /* .swiftlint.yml */,
 				AC6C50E8275915FD0069DC0B /* News */,
