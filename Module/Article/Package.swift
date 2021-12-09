@@ -16,7 +16,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(name: "Realm", url: "https://github.com/realm/realm-cocoa.git", from: "5.5.2"),
         .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.4.4")),
-        .package(path: "../Core")
+        .package(url: "https://github.com/agungtriu/Core.git", .branch("master"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
